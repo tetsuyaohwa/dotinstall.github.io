@@ -33,13 +33,14 @@ YouTube 用の「データ動画」を自動で作る仕組みです。
 
 何度実行しても安全です（入っているものは飛ばします）。
 
-## Mac での手順（買い替えたとき）
+## Mac での手順
 
 1. `command + space` を押して `ターミナル` と入力し、**Enter**。
 2. 下を貼り付けて **Enter**。
 
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/tetsuyaohwa/dotinstall.github.io/claude/friendly-lovelace-pqbop3/video-factory/setup/mac-setup.sh | bash
+   curl -fsSL https://raw.githubusercontent.com/tetsuyaohwa/dotinstall.github.io/claude/friendly-lovelace-pqbop3/video-factory/setup/mac-setup.sh -o /tmp/vf-setup.sh && bash /tmp/vf-setup.sh
    ```
 
-3. 出てきたレポートを Claude に貼り付けてください。
+3. 「Password:」と出たら Mac のログインパスワードを入力して **Enter**（入力中は何も表示されませんが正常です）。「Press RETURN」と出たら **Enter**。
+4. 出てきたレポートを Claude に貼り付けてください。
