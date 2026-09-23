@@ -46,7 +46,8 @@ voicevox_installed() { [ -d "/Applications/VOICEVOX.app" ] || [ -d "$HOME/Applic
 if ! voicevox_installed; then
   echo ""
   echo "VOICEVOX をインストールします（サイズが大きいので時間がかかります）..."
-  brew tap VOICEVOX/voicevox && brew install --cask voicevox
+  # 新しい Homebrew は公式以外の tap を「信頼する」と明示しないと使えない
+  brew tap VOICEVOX/voicevox && brew trust voicevox/voicevox && brew install --cask voicevox
 fi
 
 # --- 作業フォルダ ---
