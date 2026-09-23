@@ -30,8 +30,11 @@ fi
 
 # 次回ターミナルを開いたときも brew が使えるように設定を残す
 BREW_LINE="eval \"\$($(command -v brew) shellenv)\""
-touch "$HOME/.zprofile"
-grep -qF "$BREW_LINE" "$HOME/.zprofile" || echo "$BREW_LINE" >> "$HOME/.zprofile"
+# （zsh と bash のどちらを使っていても効くように両方に書く）
+for rc in "$HOME/.zprofile" "$HOME/.bash_profile"; do
+  touch "$rc"
+  grep -qF "$BREW_LINE" "$rc" || echo "$BREW_LINE" >> "$rc"
+done
 
 # --- 各ツール ---
 echo ""
