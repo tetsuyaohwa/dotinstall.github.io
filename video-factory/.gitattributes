@@ -1,0 +1,4 @@
+# Mac 用スクリプトは改行コードを LF に固定（CRLF だと Mac で動かない）
+*.sh  text eol=lf
+# Windows 用スクリプトは CRLF
+*.ps1 text eol=crlf
